@@ -40,13 +40,24 @@ function crearTitulo() {
     titulo.textContent = texto;
     document.getElementById('contenido').appendChild(titulo);
 }
+
 function crearEnlace() {
+    // Obtén el texto y la URL desde los campos de entrada
     var texto = document.getElementById('texto').value;
-    var href = document.getElementById('texto');
-    var enlace = document.createElement("a");
+    var url = document.getElementById('url').value;  // Este es el nuevo campo para la URL
 
-    enlace.href = href;
-    enlace.textContent = texto;
+    // Verifica si ambos campos tienen contenido
+    if (texto && url) {
+        // Crea el elemento de enlace (a)
+        var enlace = document.createElement("a");
 
-    document.getElementById('contenido').appendChild(enlace);
+        // Asigna la URL y el texto al enlace
+        enlace.href = url;
+        enlace.textContent = texto;
+
+        // Agrega el enlace al contenido
+        document.getElementById('contenido').appendChild(enlace);
+    } else {
+        alert("Por favor ingresa tanto el texto como la URL.");
+    }
 }
