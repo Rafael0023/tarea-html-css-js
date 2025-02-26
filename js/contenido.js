@@ -50,12 +50,17 @@ function crearEnlace() {
     if (texto && url) {
         enlace.href = url;  // Establecer el atributo href al valor de la URL
         enlace.textContent = texto;  // Establecer el texto del enlace
-        enlace.target = "_blank"; // Opcional: abrir el enlace en una nueva ventana o pestaña
+        enlace.target = "_blank"; // Abrir el enlace en una nueva pestaña o ventana
+
+        // Estilo opcional para el enlace
+        enlace.style.color = 'blue';
+        enlace.style.textDecoration = 'underline';
 
         // Añadir el enlace al contenido
         document.getElementById('contenido').appendChild(enlace);
+        document.getElementById('url').value = '';  // Limpiar el campo de URL después de añadir el enlace
+        document.getElementById('texto').value = ''; // Limpiar el campo de texto
     } else {
         alert("Por favor, ingresa tanto el texto como la URL.");
     }
 }
-
