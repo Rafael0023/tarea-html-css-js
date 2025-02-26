@@ -42,22 +42,18 @@ function crearTitulo() {
 }
 
 function crearEnlace() {
-    // Obtén el texto y la URL desde los campos de entrada
-    var texto = document.getElementById('texto').value;
-    var url = document.getElementById('url').value;  // Este es el nuevo campo para la URL
+    var texto = document.getElementById('texto').value;  // Obtener el texto para el enlace
+    var url = document.getElementById('url').value;  // Obtener la URL del enlace
+    var enlace = document.createElement("a");
 
-    // Verifica si ambos campos tienen contenido
+    // Verificar si la URL y el texto no están vacíos
     if (texto && url) {
-        // Crea el elemento de enlace (a)
-        var enlace = document.createElement("a");
+        enlace.href = url;  // Establecer el atributo href al valor de la URL
+        enlace.textContent = texto;  // Establecer el texto del enlace
 
-        // Asigna la URL y el texto al enlace
-        enlace.href = url;
-        enlace.textContent = texto;
-
-        // Agrega el enlace al contenido
+        // Añadir el enlace al contenido
         document.getElementById('contenido').appendChild(enlace);
     } else {
-        alert("Por favor ingresa tanto el texto como la URL.");
+        alert("Por favor, ingresa tanto el texto como la URL.");
     }
 }
