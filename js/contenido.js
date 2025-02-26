@@ -50,6 +50,7 @@ function crearEnlace() {
     if (texto && url) {
         enlace.href = url;  // Establecer el atributo href al valor de la URL
         enlace.textContent = texto;  // Establecer el texto del enlace
+        enlace.target = "_blank"; // Opcional: abrir el enlace en una nueva ventana o pestaña
 
         // Añadir el enlace al contenido
         document.getElementById('contenido').appendChild(enlace);
@@ -57,3 +58,4 @@ function crearEnlace() {
         alert("Por favor, ingresa tanto el texto como la URL.");
     }
 }
+
