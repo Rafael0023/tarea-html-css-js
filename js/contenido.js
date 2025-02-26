@@ -46,7 +46,7 @@ function crearEnlace() {
     var enlace = document.createElement("a");
 
     enlace.href = href;
-    enlace.textContent = href;
+    enlace.textContent = texto;
 
     document.getElementById('contenido').appendChild(enlace);
 }
